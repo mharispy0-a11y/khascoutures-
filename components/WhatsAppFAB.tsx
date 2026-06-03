@@ -1,13 +1,16 @@
 "use client";
 
+const WA = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923001234567";
+
 export default function WhatsAppFAB() {
   return (
     <a
-      href="https://wa.me/923001234567?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20KhasCoutures"
+      href={`https://wa.me/${encodeURIComponent(WA)}?text=${encodeURIComponent("Hello, I'd like to enquire about KhasCoutures")}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp enquiry"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed right-6 z-40 group"
+      style={{ bottom: "80px" }}
     >
       <div className="relative w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
         {/* Pulse ring */}
