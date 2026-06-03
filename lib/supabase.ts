@@ -1,0 +1,46 @@
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+
+export type Appointment = {
+  id: string;
+  name: string;
+  phone: string;
+  email?: string | null;
+  occasion: "bridal" | "party" | "pret" | "custom";
+  message?: string | null;
+  status: "pending" | "contacted" | "confirmed" | "cancelled";
+  created_at: string;
+  ip_address?: string | null;
+  user_agent?: string | null;
+};
+
+export type Product = {
+  id: string;
+  name: string;
+  category: "bridal" | "party" | "pret";
+  fabric?: string | null;
+  embroidery?: string | null;
+  price_pkr?: number | null;
+  price_on_request: boolean;
+  image_url?: string | null;
+  image_alt?: string | null;
+  whatsapp_enquiry_text?: string | null;
+  sort_order: number;
+  is_active: boolean;
+  created_at: string;
+};
+
+let _serverClient: SupabaseClient | null = null;
+
+export function getServerClient(): SupabaseClient {
+  if (!_serverClient) {
+    const url = process.env.SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) {
+      throw new Error("Supabase env vars not configured (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)");
+    }
+    _serverClient = createClient(url, key, {
+      auth: { persistSession: false },
+    });
+  }
+  return _serverClient;
+}
