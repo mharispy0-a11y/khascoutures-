@@ -51,7 +51,7 @@ export default function GalleryPreview() {
                 <div className="absolute bottom-2 right-2 w-5 h-5 border-r border-b border-gold/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Center label on hover */}
-                <div className="absolute inset-0 flex items-center justify-center bg-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                <div className="absolute inset-0 flex items-center justify-center bg-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-ivory font-display text-lg italic" style={{ fontFamily: "var(--font-cormorant)" }}>
                     {item.label}
                   </span>

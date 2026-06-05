@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { KhasLogo } from "@/components/KhasLogo";
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -61,15 +62,10 @@ export default function Hero() {
 
         {/* Logo mark */}
         <div
-          className="w-20 h-20 rounded-full border-2 border-gold/60 flex items-center justify-center mx-auto mb-8 animate-fadeIn"
+          className="mx-auto mb-8 animate-fadeIn"
           style={{ animationDelay: "0.2s", opacity: 0 }}
         >
-          <span
-            className="text-gold text-3xl font-semibold"
-            style={{ fontFamily: "var(--font-cormorant)", direction: "rtl" }}
-          >
-            خاص
-          </span>
+          <KhasLogo size={80} />
         </div>
 
         {/* Main title */}

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { KhasLogo } from "@/components/KhasLogo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -13,6 +15,7 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,10 +25,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // On inner pages the top of the page is ivory bg — always use solid navbar there.
+  const showSolid = pathname !== "/" || scrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        showSolid
           ? "bg-ivory/95 backdrop-blur-md border-b border-gold/20 py-3"
           : "bg-transparent py-5"
       }`}
@@ -33,22 +39,17 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center bg-ivory/80 group-hover:border-gold-dark transition-colors">
-            <span
-              className="text-gold font-display text-lg font-semibold"
-              style={{ fontFamily: "var(--font-cormorant)", direction: "rtl" }}
-            >
-              خاص
-            </span>
+          <div className="flex-shrink-0">
+            <KhasLogo size={40} />
           </div>
           <div className="hidden sm:block">
             <p
-              className="text-charcoal font-display text-xl font-semibold tracking-wide leading-none"
+              className={`font-display text-xl font-semibold tracking-wide leading-none transition-colors duration-500 ${showSolid ? "text-charcoal" : "text-ivory"}`}
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
               KhasCoutures
             </p>
-            <p className="text-muted text-[10px] tracking-[0.2em] uppercase font-body mt-0.5">
+            <p className={`text-[10px] tracking-[0.2em] uppercase font-body mt-0.5 transition-colors duration-500 ${showSolid ? "text-charcoal/50" : "text-ivory/60"}`}>
               Bridal &amp; Party Wear
             </p>
           </div>
@@ -60,7 +61,7 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-charcoal/80 hover:text-gold font-body text-sm tracking-widest uppercase transition-colors duration-300 relative group"
+                className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 relative group ${showSolid ? "text-charcoal/80 hover:text-gold" : "text-ivory/90 hover:text-gold"}`}
               >
                 {l.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
@@ -79,7 +80,7 @@ export default function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden text-charcoal hover:text-gold transition-colors p-1"
+          className={`md:hidden hover:text-gold transition-colors duration-300 p-1 ${showSolid ? "text-charcoal" : "text-ivory"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
