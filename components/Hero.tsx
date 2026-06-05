@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { KhasLogo } from "@/components/KhasLogo";
 
 export default function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = titleRef.current;
@@ -52,31 +52,23 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Urdu tagline */}
-        <p
-          className="text-gold/70 text-base md:text-lg mb-4 tracking-[0.15em] animate-fadeIn"
-          style={{ animationDelay: "0.1s", opacity: 0 }}
-        >
-          ✦ &nbsp; Rawalpindi's Premier Couture House &nbsp; ✦
-        </p>
-
-        {/* Logo mark */}
+        {/* Large Urdu logo replacing English title */}
         <div
-          className="mx-auto mb-8 animate-fadeIn"
-          style={{ animationDelay: "0.2s", opacity: 0 }}
-        >
-          <KhasLogo size={80} />
-        </div>
-
-        {/* Main title */}
-        <h1
           ref={titleRef}
-          className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-ivory leading-none tracking-wide mb-6"
-          style={{ fontFamily: "var(--font-cormorant)" }}
+          className="mx-auto mb-6 flex items-center justify-center"
+          style={{ filter: "drop-shadow(0 0 32px rgba(201,168,76,0.35))" }}
         >
-          Khas
-          <span className="gold-shimmer font-semibold italic">Coutures</span>
-        </h1>
+          <div style={{ width: 280, height: 280, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+            <Image
+              src="/logo2.jpg"
+              alt="KhasCouture"
+              width={280}
+              height={280}
+              priority
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            />
+          </div>
+        </div>
 
         {/* Ornamental line */}
         <div className="ornamental-line max-w-xs mx-auto my-6">
@@ -118,10 +110,11 @@ export default function Hero() {
       {/* Scroll indicator */}
       <a
         href="#collections"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/50 hover:text-gold transition-colors animate-floatUp"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold hover:text-gold-light transition-colors"
         aria-label="Scroll down"
+        style={{ animation: "floatUp 3s ease-in-out infinite" }}
       >
-        <ChevronDown size={28} />
+        <ChevronDown size={32} strokeWidth={1.5} />
       </a>
     </section>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import type { Appointment } from "@/lib/supabase";
@@ -149,7 +149,7 @@ export default function AppointmentsTable({ initialData }: { initialData: Appoin
                     </td>
                     <td className="px-4 py-3">
                       <a
-                        href={`https://wa.me/${encodeURIComponent(appt.phone.replace(/[\s\-]/g, "").replace(/^\+/, ""))}?text=${encodeURIComponent(`Hello ${appt.name}, this is KhasCoutures regarding your ${OCCASION_LABELS[appt.occasion] ?? appt.occasion} appointment request.`)}`}
+                        href={`https://wa.me/${encodeURIComponent(appt.phone.replace(/[\s\-]/g, "").replace(/^\+/, ""))}?text=${encodeURIComponent(`Hello ${appt.name}, this is KhasCouture regarding your ${OCCASION_LABELS[appt.occasion] ?? appt.occasion} appointment request.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-xs bg-[#25D366] text-white px-2.5 py-1.5 rounded hover:bg-[#1eb858] transition-colors"

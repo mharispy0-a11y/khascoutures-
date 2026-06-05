@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getServerClient } from "@/lib/supabase";
 import type { Product } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "Collections | KhasCoutures",
-  description: "Explore our Bridal, Party Wear and Pret collections at KhasCoutures, Rawalpindi.",
+  title: "Collections | KhasCouture",
+  description: "Explore our Bridal, Party Wear and Pret collections at KhasCouture, Rawalpindi.",
 };
 
 const WA = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923001234567";
@@ -90,7 +90,7 @@ export default async function CollectionsPage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "KhasCoutures Collections",
+    name: "KhasCouture Collections",
     url: `${BASE_URL}/collections`,
     numberOfItems: products.length,
     itemListElement: products.map((p, i) => ({

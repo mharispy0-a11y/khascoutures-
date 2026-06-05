@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Admin Login | KhasCoutures",
+  title: "Admin Login | KhasCouture",
   robots: { index: false, follow: false },
 };
 
@@ -21,7 +21,7 @@ export default async function AdminLoginPage({
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
         <div className="text-center mb-8">
-          <h1 className="text-xl font-semibold text-gray-800">KhasCoutures Admin</h1>
+          <h1 className="text-xl font-semibold text-gray-800">KhasCouture Admin</h1>
           <p className="text-sm text-gray-500 mt-1">Sign in to manage your store</p>
         </div>
 

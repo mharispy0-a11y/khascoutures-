@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -47,7 +47,7 @@ export default function Navbar() {
               className={`font-display text-xl font-semibold tracking-wide leading-none transition-colors duration-500 ${showSolid ? "text-charcoal" : "text-ivory"}`}
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
-              KhasCoutures
+              KhasCouture
             </p>
             <p className={`text-[10px] tracking-[0.2em] uppercase font-body mt-0.5 transition-colors duration-500 ${showSolid ? "text-charcoal/50" : "text-ivory/60"}`}>
               Bridal &amp; Party Wear

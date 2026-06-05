@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -23,22 +23,22 @@ const BASE_URL = "https://splendorous-daffodil-c9b791.netlify.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "KhasCoutures | Exquisite Couture Infused In Tradition",
-    template: "%s | KhasCoutures",
+    default: "KhasCouture | Exquisite Couture Infused In Tradition",
+    template: "%s | KhasCouture",
   },
   description:
-    "KhasCoutures — Bridal & Party Wear. Exquisite Pakistani couture infused in tradition. Located in Rawalpindi, Pakistan.",
-  keywords: ["bridal wear", "party wear", "Pakistani couture", "Rawalpindi", "KhasCoutures", "luxury fashion Pakistan"],
+    "KhasCouture — Bridal & Party Wear. Exquisite Pakistani couture infused in tradition. Located in Rawalpindi, Pakistan.",
+  keywords: ["bridal wear", "party wear", "Pakistani couture", "Rawalpindi", "KhasCouture", "luxury fashion Pakistan"],
   openGraph: {
-    title: "KhasCoutures",
+    title: "KhasCouture",
     description: "Exquisite Couture Infused In Tradition",
     type: "website",
     url: BASE_URL,
-    siteName: "KhasCoutures",
+    siteName: "KhasCouture",
   },
   twitter: {
     card: "summary_large_image",
-    title: "KhasCoutures",
+    title: "KhasCouture",
     description: "Exquisite Couture Infused In Tradition",
   },
 };
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "KhasCoutures",
+  name: "KhasCouture",
   url: BASE_URL,
   logo: `${BASE_URL}/logo2.jpg`,
   description: "Luxury Pakistani couture house in Rawalpindi specialising in bridal, party wear, and pret.",

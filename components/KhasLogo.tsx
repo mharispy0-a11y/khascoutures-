@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export function KhasLogo({ size = 40 }: { size?: number }) {
   const border = Math.max(1.5, Math.round(size * 0.04));
@@ -17,7 +17,7 @@ export function KhasLogo({ size = 40 }: { size?: number }) {
     >
       <Image
         src="/logo2.jpg"
-        alt="KhasCoutures"
+        alt="KhasCouture"
         width={size}
         height={size}
         style={{ objectFit: "cover", width: "100%", height: "100%" }}

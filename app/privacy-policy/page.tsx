@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | KhasCoutures",
-  description: "How KhasCoutures collects, uses, and protects your personal information.",
+  title: "Privacy Policy | KhasCouture",
+  description: "How KhasCouture collects, uses, and protects your personal information.",
 };
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "owner@khascoutures.pk";

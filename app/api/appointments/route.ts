@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { appointmentSchema } from "@/lib/validations";
 import { getServerClient } from "@/lib/supabase";
@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
 
     // Admin notification
     await resend.emails.send({
-      from: "KhasCoutures <noreply@khascoutures.pk>",
+      from: "KhasCouture <noreply@khascoutures.pk>",
       to: adminEmail,
       subject: `New Appointment Request — ${name} (${occasionLabels[occasion]})`,
       html: `
@@ -143,15 +143,15 @@ export async function POST(req: NextRequest) {
     // Client confirmation (if email provided)
     if (email) {
       await resend.emails.send({
-        from: "KhasCoutures <noreply@khascoutures.pk>",
+        from: "KhasCouture <noreply@khascoutures.pk>",
         to: email,
-        subject: "We received your appointment request — KhasCoutures",
+        subject: "We received your appointment request — KhasCouture",
         html: `
           <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:24px;border:1px solid #C9A84C;">
             <h2 style="color:#C9A84C;">Thank you, ${name}!</h2>
             <p style="color:#2C2C2C;line-height:1.6;">We have received your appointment request for <strong>${occasionLabels[occasion]}</strong> and will contact you within 24 hours.</p>
             <p style="color:#666;font-size:14px;">For urgent enquiries, please WhatsApp us directly.</p>
-            <p style="color:#2C2C2C;font-style:italic;margin-top:24px;">KhasCoutures — Exquisite Couture Infused In Tradition</p>
+            <p style="color:#2C2C2C;font-style:italic;margin-top:24px;">KhasCouture — Exquisite Couture Infused In Tradition</p>
           </div>
         `,
       }).catch((e: Error) => console.error("[appointments] client email error:", e.message));

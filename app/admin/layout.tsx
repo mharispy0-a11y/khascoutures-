@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { signOut } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Admin | KhasCoutures",
+  title: "Admin | KhasCouture",
   robots: { index: false, follow: false },
 };
 
@@ -12,7 +12,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <span className="font-semibold text-gray-800 text-sm">KhasCoutures Admin</span>
+          <span className="font-semibold text-gray-800 text-sm">KhasCouture Admin</span>
           <div className="hidden sm:flex items-center gap-4 text-xs">
             <Link href="/admin/dashboard" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
             <Link href="/admin/appointments" className="text-gray-600 hover:text-gray-900">Appointments</Link>

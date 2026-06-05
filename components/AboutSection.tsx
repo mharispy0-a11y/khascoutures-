@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { KhasLogo } from "@/components/KhasLogo";
 
 export default function AboutSection() {
@@ -86,7 +86,7 @@ export default function AboutSection() {
 
           <div className="space-y-4 text-ivory/60 font-body text-sm leading-relaxed">
             <p>
-              KhasCoutures was born from a deep reverence for the embroidery traditions of
+              KhasCouture was born from a deep reverence for the embroidery traditions of
               the subcontinent — the intricate zardozi of the subcontinent, the mirror-work of Sindh,
               and the chikankari of Lucknow — reimagined for the modern Pakistani woman.
             </p>

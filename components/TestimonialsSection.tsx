@@ -1,7 +1,7 @@
-const testimonials = [
+﻿const testimonials = [
   {
     quote:
-      "My wedding dress from KhasCoutures was beyond anything I imagined. The intricate embroidery and the fit were absolutely perfect. Every guest asked where it was from.",
+      "My wedding dress from KhasCouture was beyond anything I imagined. The intricate embroidery and the fit were absolutely perfect. Every guest asked where it was from.",
     name: "Ayesha R.",
     occasion: "Bride, December 2024",
   },

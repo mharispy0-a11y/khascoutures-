@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import GalleryGrid from "@/components/GalleryGrid";
 
 export const metadata: Metadata = {
-  title: "Lookbook | KhasCoutures",
-  description: "Browse the KhasCoutures lookbook — editorial couture photography from Rawalpindi.",
+  title: "Lookbook | KhasCouture",
+  description: "Browse the KhasCouture lookbook — editorial couture photography from Rawalpindi.",
 };
 
 export default function GalleryPage() {

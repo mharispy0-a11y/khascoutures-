@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 
 function InstagramIcon({ size = 14 }: { size?: number }) {

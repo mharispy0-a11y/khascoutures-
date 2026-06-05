@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { KhasLogo } from "@/components/KhasLogo";
 
@@ -38,7 +38,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-ivory font-display text-xl font-semibold" style={{ fontFamily: "var(--font-cormorant)" }}>
-                KhasCoutures
+                KhasCouture
               </p>
               <p className="text-gold/70 text-[10px] tracking-[0.2em] uppercase">Bridal &amp; Party Wear</p>
             </div>
@@ -111,7 +111,7 @@ export default function Footer() {
               className="flex items-center gap-2.5 text-ivory/60 hover:text-gold text-sm font-body transition-colors"
             >
               <span className="text-gold"><FacebookIcon size={15} /></span>
-              KhasCoutures on Facebook
+              KhasCouture on Facebook
             </a>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Footer() {
       <div className="border-t border-ivory/10 px-6 py-5">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-ivory/30 text-xs font-body tracking-wide">
-            © {new Date().getFullYear()} KhasCoutures. All rights reserved.
+            © {new Date().getFullYear()} KhasCouture. All rights reserved.
           </p>
           <Link href="/privacy-policy" className="text-ivory/20 hover:text-ivory/50 text-xs font-body transition-colors">
             Privacy Policy

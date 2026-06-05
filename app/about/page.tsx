@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { KhasLogo } from "@/components/KhasLogo";
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "About KhasCoutures",
-  description: "The story behind KhasCoutures — a luxury Pakistani couture house in Rawalpindi, founded in 2013.",
+  name: "About KhasCouture",
+  description: "The story behind KhasCouture — a luxury Pakistani couture house in Rawalpindi, founded in 2013.",
   mainEntity: {
     "@type": "Organization",
-    name: "KhasCoutures",
+    name: "KhasCouture",
     foundingDate: "2013",
     foundingLocation: "Rawalpindi, Pakistan",
     description: "Luxury Pakistani couture specialising in bridal, party wear, and pret.",
@@ -17,8 +17,8 @@ const aboutJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Our Story | KhasCoutures",
-  description: "The story behind KhasCoutures — a luxury Pakistani couture house in Rawalpindi.",
+  title: "Our Story | KhasCouture",
+  description: "The story behind KhasCouture — a luxury Pakistani couture house in Rawalpindi.",
 };
 
 const values = [
@@ -49,7 +49,7 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2013", event: "KhasCoutures opens its first boutique in Rawalpindi" },
+  { year: "2013", event: "KhasCouture opens its first boutique in Rawalpindi" },
   { year: "2016", event: "Launch of the signature Bridal Collection" },
   { year: "2019", event: "Introduction of the Party Wear and Pret lines" },
   { year: "2022", event: "Expanded to the current flagship store at R.B 2 Plaza" },
@@ -138,7 +138,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4 text-charcoal/65 font-body text-sm leading-relaxed">
               <p>
-                KhasCoutures was founded on a simple belief: that a woman&apos;s dress for
+                KhasCouture was founded on a simple belief: that a woman&apos;s dress for
                 the most important days of her life deserves to be extraordinary. That belief
                 led us to study the embroidery traditions of the subcontinent — the zardozi of
                 the subcontinent, the phulkari of Punjab, the gota-patti of Rajasthan — and weave them

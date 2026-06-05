@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { KhasLogo } from "@/components/KhasLogo";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | KhasCoutures",
+  title: "Page Not Found | KhasCouture",
   description: "The page you're looking for doesn't exist.",
 };
 

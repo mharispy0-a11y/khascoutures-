@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MapPin, Clock, Phone } from "lucide-react";
 import AppointmentForm from "@/components/AppointmentForm";
 
@@ -11,8 +11,8 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 }
 
 export const metadata: Metadata = {
-  title: "Contact & Visit | KhasCoutures",
-  description: "Visit KhasCoutures in Rawalpindi — Shop No. G 58,59 R.B 2 Plaza Rehmanabad. Book an appointment for bridal, party wear or custom orders.",
+  title: "Contact & Visit | KhasCouture",
+  description: "Visit KhasCouture in Rawalpindi — Shop No. G 58,59 R.B 2 Plaza Rehmanabad. Book an appointment for bridal, party wear or custom orders.",
 };
 
 const WA = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923001234567";
@@ -28,7 +28,7 @@ const hours = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "KhasCoutures",
+  name: "KhasCouture",
   description: "Luxury Pakistani couture — bridal, party wear, and pret. Located in Rawalpindi.",
   url: "https://splendorous-daffodil-c9b791.netlify.app",
   telephone: `+${WA}`,
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="KhasCoutures Location — R.B 2 Plaza Rehmanabad, Rawalpindi"
+                  title="KhasCouture Location — R.B 2 Plaza Rehmanabad, Rawalpindi"
                 />
               </div>
               <p className="text-charcoal/50 font-body text-xs text-center">
