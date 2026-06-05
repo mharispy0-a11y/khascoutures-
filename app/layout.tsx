@@ -18,16 +18,50 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
+const BASE_URL = "https://splendorous-daffodil-c9b791.netlify.app";
+
 export const metadata: Metadata = {
-  title: "KhasCoutures | Exquisite Couture Infused In Tradition",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "KhasCoutures | Exquisite Couture Infused In Tradition",
+    template: "%s | KhasCoutures",
+  },
   description:
     "KhasCoutures — Bridal & Party Wear. Exquisite Pakistani couture infused in tradition. Located in Rawalpindi, Pakistan.",
-  keywords: ["bridal wear", "party wear", "Pakistani couture", "Rawalpindi", "KhasCoutures"],
+  keywords: ["bridal wear", "party wear", "Pakistani couture", "Rawalpindi", "KhasCoutures", "luxury fashion Pakistan"],
   openGraph: {
     title: "KhasCoutures",
     description: "Exquisite Couture Infused In Tradition",
     type: "website",
+    url: BASE_URL,
+    siteName: "KhasCoutures",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "KhasCoutures",
+    description: "Exquisite Couture Infused In Tradition",
+  },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KhasCoutures",
+  url: BASE_URL,
+  logo: `${BASE_URL}/logo2.jpg`,
+  description: "Luxury Pakistani couture house in Rawalpindi specialising in bridal, party wear, and pret.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Shop No. G 58,59 Uper Ground, R.B 2 Plaza Rehmanabad",
+    addressLocality: "Rawalpindi",
+    postalCode: "46000",
+    addressCountry: "PK",
+  },
+  sameAs: [
+    "https://www.instagram.com/khascoutures",
+    "https://www.threads.com/@khascoutures",
+    "https://www.facebook.com/khascouture",
+  ],
 };
 
 export default function RootLayout({
@@ -37,8 +71,14 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-screen flex flex-col bg-ivory text-charcoal antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

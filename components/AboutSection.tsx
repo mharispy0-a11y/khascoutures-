@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { KhasLogo } from "@/components/KhasLogo";
 
 export default function AboutSection() {
   return (
@@ -36,13 +37,8 @@ export default function AboutSection() {
                 />
                 {/* Centered brand mark */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="w-28 h-28 rounded-full border-2 border-gold/40 flex items-center justify-center mb-4">
-                    <span
-                      className="text-gold text-5xl font-semibold"
-                      style={{ fontFamily: "var(--font-cormorant)", direction: "rtl" }}
-                    >
-                      خاص
-                    </span>
+                  <div className="mb-4">
+                    <KhasLogo size={112} />
                   </div>
                   <p className="text-gold/50 text-xs tracking-[0.4em] uppercase font-body">
                     Est. Rawalpindi
@@ -91,7 +87,7 @@ export default function AboutSection() {
           <div className="space-y-4 text-ivory/60 font-body text-sm leading-relaxed">
             <p>
               KhasCoutures was born from a deep reverence for the embroidery traditions of
-              the subcontinent — the intricate zardozi of Lahore, the mirror-work of Sindh,
+              the subcontinent — the intricate zardozi of the subcontinent, the mirror-work of Sindh,
               and the chikankari of Lucknow — reimagined for the modern Pakistani woman.
             </p>
             <p>
