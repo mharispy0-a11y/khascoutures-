@@ -2,6 +2,8 @@ export const dynamic = "force-dynamic";
 
 import { getServerClient } from "@/lib/supabase";
 import type { Appointment } from "@/lib/supabase";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 import AppointmentsTable from "./AppointmentsTable";
 
 async function getAppointments(): Promise<Appointment[]> {
@@ -18,6 +20,8 @@ async function getAppointments(): Promise<Appointment[]> {
 }
 
 export default async function AppointmentsPage() {
+  const session = await auth();
+  if (!session) redirect("/admin/login");
   const appointments = await getAppointments();
   return (
     <div className="max-w-6xl mx-auto">

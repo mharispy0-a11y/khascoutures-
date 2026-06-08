@@ -1,6 +1,8 @@
 export const dynamic = "force-dynamic";
 
 import { getServerClient } from "@/lib/supabase";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 async function getStats() {
@@ -25,6 +27,8 @@ async function getStats() {
 }
 
 export default async function DashboardPage() {
+  const session = await auth();
+  if (!session) redirect("/admin/login");
   const stats = await getStats();
 
   const cards = [

@@ -2,6 +2,8 @@ export const dynamic = "force-dynamic";
 
 import { getServerClient } from "@/lib/supabase";
 import type { Product } from "@/lib/supabase";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 import ProductsTable from "./ProductsTable";
 
 async function getProducts(): Promise<Product[]> {
@@ -18,6 +20,8 @@ async function getProducts(): Promise<Product[]> {
 }
 
 export default async function ProductsPage() {
+  const session = await auth();
+  if (!session) redirect("/admin/login");
   const products = await getProducts();
   return (
     <div className="max-w-5xl mx-auto">
