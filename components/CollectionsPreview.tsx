@@ -4,30 +4,30 @@ import Image from "next/image";
 const collections = [
   {
     id: "bridal",
+    src: "/collections/bridal.jpg",
+    alt: "Bridal Collection",
+    badge: "12 Pieces · Nikah & Walima",
     title: "Bridal",
-    subtitle: "Nikah & Walima",
     description:
-      "Heirloom-quality bridal ensembles woven with zari, gota, and hand-embroidered motifs that honour the grandeur of your most cherished day.",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
-    count: "12 Pieces",
+      "Heirloom-quality bridal ensembles woven with zari, gota and hand-embroidered motifs that honour the grandeur of your most cherished day.",
   },
   {
     id: "party",
+    src: "/collections/party.jpg",
+    alt: "Party Wear Collection",
+    badge: "18 Pieces · Formal & Semi-formal",
     title: "Party Wear",
-    subtitle: "Formal & Semi-formal",
     description:
       "Opulent formal wear that commands attention — intricate embellishments and rich fabrics crafted for evening celebrations and milad gatherings.",
-    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80",
-    count: "18 Pieces",
   },
   {
     id: "pret",
+    src: "/collections/pret.jpg",
+    alt: "Pret & Casual Collection",
+    badge: "24 Pieces · Everyday Luxury",
     title: "Pret & Casual",
-    subtitle: "Everyday Luxury",
     description:
       "Refined ready-to-wear silhouettes fusing contemporary cuts with traditional fabric stories — effortless elegance for every occasion.",
-    image: "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=600&q=80",
-    count: "24 Pieces",
   },
 ];
 
@@ -56,53 +56,39 @@ export default function CollectionsPreview() {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {collections.map((col) => (
             <Link
               key={col.id}
               href={`/collections#${col.id}`}
-              className="group relative overflow-hidden border border-gold/20 card-hover bg-white block"
+              className="group relative overflow-hidden rounded-sm block"
             >
-              {/* Collection image */}
-              <div className="h-72 relative overflow-hidden">
+              <div className="relative h-[420px] w-full overflow-hidden">
                 <Image
-                  src={col.image}
-                  alt={col.title}
+                  src={col.src}
+                  alt={col.alt}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                {/* Gold corner accents */}
-                <div className="absolute top-3 left-3 w-8 h-8 border-l border-t border-gold/60 z-10" />
-                <div className="absolute top-3 right-3 w-8 h-8 border-r border-t border-gold/60 z-10" />
-                <div className="absolute bottom-3 left-3 w-8 h-8 border-l border-b border-gold/60 z-10" />
-                <div className="absolute bottom-3 right-3 w-8 h-8 border-r border-b border-gold/60 z-10" />
-                {/* Piece count badge */}
-                <div className="absolute top-4 right-4 bg-charcoal/70 border border-gold/50 px-2.5 py-1 z-10">
-                  <span className="text-gold text-[10px] tracking-widest font-body">
-                    {col.count}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-xs tracking-widest text-gold uppercase mb-1 font-body">
+                    {col.badge}
+                  </p>
+                  <h3
+                    className="text-2xl mb-2 font-light"
+                    style={{ fontFamily: "var(--font-cormorant)" }}
+                  >
+                    {col.title}
+                  </h3>
+                  <p className="text-sm text-white/80 mb-4 font-body leading-relaxed">
+                    {col.description}
+                  </p>
+                  <span className="text-xs tracking-widest text-gold uppercase font-body border-b border-gold/40 pb-0.5 group-hover:border-gold transition-colors">
+                    View Collection →
                   </span>
                 </div>
-              </div>
-
-              {/* Card body */}
-              <div className="p-6 bg-warm-white">
-                <p className="text-gold text-[10px] tracking-[0.3em] uppercase font-body mb-1">
-                  {col.subtitle}
-                </p>
-                <h3
-                  className="font-display text-2xl text-charcoal font-medium mb-3"
-                  style={{ fontFamily: "var(--font-cormorant)" }}
-                >
-                  {col.title}
-                </h3>
-                <p className="text-charcoal/60 text-sm font-body leading-relaxed mb-4">
-                  {col.description}
-                </p>
-                <span className="text-gold text-xs tracking-[0.25em] uppercase font-body border-b border-gold/40 pb-0.5 group-hover:border-gold transition-colors">
-                  View Collection →
-                </span>
               </div>
             </Link>
           ))}
