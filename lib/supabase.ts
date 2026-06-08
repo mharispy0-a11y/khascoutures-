@@ -29,6 +29,50 @@ export type Product = {
   created_at: string;
 };
 
+export type GalleryImage = {
+  id: string;
+  url: string;
+  caption?: string | null;
+  category: string;
+  display_order: number;
+  visible: boolean;
+  created_at: string;
+};
+
+export type Review = {
+  id: string;
+  name: string;
+  role?: string | null;
+  content: string;
+  rating: number;
+  approved: boolean;
+  pinned: boolean;
+  created_at: string;
+};
+
+export type Customer = {
+  id: string;
+  name?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  source?: string | null;
+  utm_campaign?: string | null;
+  interest?: string | null;
+  notes?: string | null;
+  created_at: string;
+};
+
+export type Enquiry = {
+  id: string;
+  name: string;
+  email?: string | null;
+  phone?: string | null;
+  message?: string | null;
+  source?: string | null;
+  read: boolean;
+  created_at: string;
+};
+
 let _serverClient: SupabaseClient | null = null;
 
 export function getServerClient(): SupabaseClient {

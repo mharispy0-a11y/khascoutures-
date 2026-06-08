@@ -1,12 +1,32 @@
 ﻿import type { Metadata } from "next";
 import GalleryGrid from "@/components/GalleryGrid";
+import { getServerClient } from "@/lib/supabase";
+import type { GalleryImage } from "@/lib/supabase";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Lookbook | KhasCouture",
   description: "Browse the KhasCouture lookbook — editorial couture photography from Rawalpindi.",
 };
 
-export default function GalleryPage() {
+async function getImages(): Promise<GalleryImage[]> {
+  try {
+    const db = getServerClient();
+    const { data } = await db
+      .from("gallery_images")
+      .select("*")
+      .eq("visible", true)
+      .order("display_order", { ascending: true })
+      .order("created_at", { ascending: false });
+    return (data as GalleryImage[]) ?? [];
+  } catch {
+    return [];
+  }
+}
+
+export default async function GalleryPage() {
+  const images = await getImages();
   return (
     <div className="pt-24">
       {/* Header */}
@@ -35,7 +55,7 @@ export default function GalleryPage() {
         </p>
       </div>
 
-      <GalleryGrid />
+      <GalleryGrid serverImages={images} />
 
       {/* Instagram CTA */}
       <section className="py-16 px-6 bg-charcoal text-center">
