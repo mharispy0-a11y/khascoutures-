@@ -52,22 +52,22 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Large Urdu logo replacing English title */}
+        {/* Large Urdu logo — screen blend removes ivory background, sepia+saturate restores gold */}
         <div
           ref={titleRef}
           className="mx-auto mb-6 flex items-center justify-center"
-          style={{ filter: "drop-shadow(0 0 32px rgba(201,168,76,0.35))" }}
         >
-          <div style={{ width: 280, height: 280, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
-            <Image
-              src="/logo2.jpg"
-              alt="KhasCouture"
-              width={280}
-              height={280}
-              priority
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            />
-          </div>
+          <Image
+            src="/logo2.jpg"
+            alt="KhasCouture"
+            width={320}
+            height={320}
+            priority
+            style={{
+              filter: "invert(1) sepia(1) saturate(3)",
+              mixBlendMode: "screen",
+            }}
+          />
         </div>
 
         {/* Ornamental line */}
@@ -107,15 +107,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <a
-        href="#collections"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold hover:text-gold-light transition-colors"
-        aria-label="Scroll down"
-        style={{ animation: "floatUp 3s ease-in-out infinite" }}
-      >
-        <ChevronDown size={32} strokeWidth={1.5} />
-      </a>
+      {/* Scroll indicator — wrapper div centres without transform so animation doesn't break it */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+        <a
+          href="#collections"
+          className="text-gold hover:text-gold-light transition-colors animate-floatUp"
+          aria-label="Scroll down"
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
+        </a>
+      </div>
     </section>
   );
 }
