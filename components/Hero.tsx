@@ -52,18 +52,18 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Large Urdu logo — screen blend removes ivory background, sepia+saturate restores gold */}
+        {/* Large Urdu logo — transparent PNG */}
         <div
           ref={titleRef}
           className="mx-auto mb-6 flex items-center justify-center"
         >
           <Image
-            src="/logo2.jpg"
+            src="/logo.png"
             alt="KhasCouture"
-            width={320}
-            height={320}
+            width={280}
+            height={280}
             priority
-            style={{ mixBlendMode: "screen" }}
+            className="w-48 md:w-64 lg:w-72 h-auto"
           />
         </div>
 
@@ -102,17 +102,17 @@ export default function Hero() {
             Book Appointment
           </Link>
         </div>
-      </div>
 
-      {/* Scroll indicator — wrapper div centres without transform so animation doesn't break it */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
-        <a
-          href="#collections"
-          className="text-gold hover:text-gold-light transition-colors animate-floatUp"
-          aria-label="Scroll down"
-        >
-          <ChevronDown size={32} strokeWidth={1.5} />
-        </a>
+        {/* Scroll indicator — placed after CTA so it never overlaps */}
+        <div className="mt-10 flex justify-center">
+          <a
+            href="#collections"
+            className="text-gold hover:text-gold-light transition-colors animate-floatUp"
+            aria-label="Scroll down"
+          >
+            <ChevronDown size={32} strokeWidth={1.5} />
+          </a>
+        </div>
       </div>
     </section>
   );

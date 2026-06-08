@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const collections = [
   {
@@ -7,8 +8,7 @@ const collections = [
     subtitle: "Nikah & Walima",
     description:
       "Heirloom-quality bridal ensembles woven with zari, gota, and hand-embroidered motifs that honour the grandeur of your most cherished day.",
-    gradient: "from-[#3D2B1F] via-[#5C3D2E] to-[#3D2B1F]",
-    accent: "#C9A84C",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
     count: "12 Pieces",
   },
   {
@@ -17,8 +17,7 @@ const collections = [
     subtitle: "Formal & Semi-formal",
     description:
       "Opulent formal wear that commands attention — intricate embellishments and rich fabrics crafted for evening celebrations and milad gatherings.",
-    gradient: "from-[#1E2A1E] via-[#2D3D2D] to-[#1E2A1E]",
-    accent: "#C9A84C",
+    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80",
     count: "18 Pieces",
   },
   {
@@ -27,8 +26,7 @@ const collections = [
     subtitle: "Everyday Luxury",
     description:
       "Refined ready-to-wear silhouettes fusing contemporary cuts with traditional fabric stories — effortless elegance for every occasion.",
-    gradient: "from-[#1A1A2E] via-[#2A2A45] to-[#1A1A2E]",
-    accent: "#C9A84C",
+    image: "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=600&q=80",
     count: "24 Pieces",
   },
 ];
@@ -65,31 +63,23 @@ export default function CollectionsPreview() {
               href={`/collections#${col.id}`}
               className="group relative overflow-hidden border border-gold/20 card-hover bg-white block"
             >
-              {/* Visual placeholder */}
-              <div
-                className={`h-72 bg-gradient-to-br ${col.gradient} relative`}
-              >
+              {/* Collection image */}
+              <div className="h-72 relative overflow-hidden">
+                <Image
+                  src={col.image}
+                  alt={col.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 {/* Gold corner accents */}
-                <div className="absolute top-3 left-3 w-8 h-8 border-l border-t border-gold/40" />
-                <div className="absolute top-3 right-3 w-8 h-8 border-r border-t border-gold/40" />
-                <div className="absolute bottom-3 left-3 w-8 h-8 border-l border-b border-gold/40" />
-                <div className="absolute bottom-3 right-3 w-8 h-8 border-r border-b border-gold/40" />
-
-                {/* Centered ornament */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span
-                    className="text-gold/30 font-display text-8xl font-light"
-                    style={{ fontFamily: "var(--font-cormorant)" }}
-                  >
-                    {col.title[0]}
-                  </span>
-                  <div className="ornamental-line w-24 mt-2">
-                    <span className="text-gold/40 text-sm">✦</span>
-                  </div>
-                </div>
-
+                <div className="absolute top-3 left-3 w-8 h-8 border-l border-t border-gold/60 z-10" />
+                <div className="absolute top-3 right-3 w-8 h-8 border-r border-t border-gold/60 z-10" />
+                <div className="absolute bottom-3 left-3 w-8 h-8 border-l border-b border-gold/60 z-10" />
+                <div className="absolute bottom-3 right-3 w-8 h-8 border-r border-b border-gold/60 z-10" />
                 {/* Piece count badge */}
-                <div className="absolute top-4 right-4 bg-gold/10 border border-gold/30 px-2.5 py-1">
+                <div className="absolute top-4 right-4 bg-charcoal/70 border border-gold/50 px-2.5 py-1 z-10">
                   <span className="text-gold text-[10px] tracking-widest font-body">
                     {col.count}
                   </span>

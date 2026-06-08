@@ -16,11 +16,11 @@ export function KhasLogo({ size = 40 }: { size?: number }) {
       }}
     >
       <Image
-        src="/logo2.jpg"
+        src="/logo.png"
         alt="KhasCouture"
         width={size}
         height={size}
-        style={{ objectFit: "cover", width: "100%", height: "100%", mixBlendMode: "screen" }}
+        style={{ objectFit: "cover", width: "100%", height: "100%" }}
       />
     </div>
   );
