@@ -63,10 +63,7 @@ export default function Hero() {
             width={320}
             height={320}
             priority
-            style={{
-              filter: "invert(1) sepia(1) saturate(3)",
-              mixBlendMode: "screen",
-            }}
+            style={{ mixBlendMode: "screen" }}
           />
         </div>
 

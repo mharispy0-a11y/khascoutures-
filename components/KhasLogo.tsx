@@ -9,7 +9,7 @@ export function KhasLogo({ size = 40 }: { size?: number }) {
         width: size,
         height: size,
         borderRadius: "50%",
-        background: "#FAF6F0",
+        background: "transparent",
         border: `${border}px solid rgba(201,168,76,0.65)`,
         overflow: "hidden",
         flexShrink: 0,
@@ -20,7 +20,7 @@ export function KhasLogo({ size = 40 }: { size?: number }) {
         alt="KhasCouture"
         width={size}
         height={size}
-        style={{ objectFit: "cover", width: "100%", height: "100%" }}
+        style={{ objectFit: "cover", width: "100%", height: "100%", mixBlendMode: "screen" }}
       />
     </div>
   );
