@@ -1,74 +1,38 @@
-﻿import Link from "next/link";
-import { KhasLogo } from "@/components/KhasLogo";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-24 px-6 bg-charcoal relative overflow-hidden">
-      {/* Background accent */}
+    <section className="py-0 bg-charcoal relative overflow-hidden">
+      {/* Top gold line */}
       <div
-        className="absolute top-0 left-0 right-0 h-px"
+        className="absolute top-0 left-0 right-0 h-px z-10"
         style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }}
       />
+      {/* Bottom gold line */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-px"
+        className="absolute bottom-0 left-0 right-0 h-px z-10"
         style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }}
       />
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Visual side */}
-        <div className="relative order-2 lg:order-1">
-          <div className="relative">
-            {/* Outer frame */}
-            <div className="border border-gold/30 p-3">
-              {/* Image placeholder with elegant gradient */}
-              <div
-                className="aspect-[4/5] relative overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, #3D2B1F 0%, #5C3D2E 40%, #4A3020 70%, #3D2B1F 100%)",
-                }}
-              >
-                {/* Decorative fabric pattern overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(45deg, rgba(201,168,76,0.03) 0px, rgba(201,168,76,0.03) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(201,168,76,0.03) 0px, rgba(201,168,76,0.03) 1px, transparent 1px, transparent 20px)",
-                  }}
-                />
-                {/* Centered brand mark */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="mb-4">
-                    <KhasLogo size={112} />
-                  </div>
-                  <p className="text-gold/50 text-xs tracking-[0.4em] uppercase font-body">
-                    Est. Rawalpindi
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating stat cards */}
-            <div className="absolute -bottom-6 -right-6 bg-gold px-6 py-4 shadow-xl">
-              <p className="text-ivory text-3xl font-display font-bold" style={{ fontFamily: "var(--font-cormorant)" }}>
-                500+
-              </p>
-              <p className="text-ivory/80 text-[10px] tracking-[0.2em] uppercase font-body mt-0.5">
-                Brides Dressed
-              </p>
-            </div>
-            <div className="absolute -top-6 -left-6 bg-charcoal border border-gold/40 px-5 py-4 shadow-xl">
-              <p className="text-gold text-2xl font-display font-semibold" style={{ fontFamily: "var(--font-cormorant)" }}>
-                Handcrafted
-              </p>
-              <p className="text-ivory/50 text-[10px] tracking-[0.2em] uppercase font-body">
-                Every Stitch
-              </p>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+        {/* Left: model image */}
+        <div className="relative h-[400px] lg:h-auto lg:min-h-[600px] order-1">
+          <Image
+            src="/story-model.jpg"
+            alt="KhasCouture — Exquisite Pakistani Couture"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Blend edge into dark story panel on desktop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/40" />
+          {/* Subtle dark gradient at bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
         </div>
 
-        {/* Text side */}
-        <div className="order-1 lg:order-2 space-y-6">
+        {/* Right: text content */}
+        <div className="order-2 py-24 px-8 lg:px-12 space-y-6 flex flex-col justify-center">
           <p className="text-gold text-xs tracking-[0.4em] uppercase font-body">Our Story</p>
           <h2
             className="font-display text-4xl md:text-5xl text-ivory font-light leading-tight"
