@@ -48,7 +48,7 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "KhasCouture",
   url: BASE_URL,
-  logo: `${BASE_URL}/logo2.jpg`,
+  logo: `${BASE_URL}/logo.png`,
   description: "Luxury Pakistani couture house in Rawalpindi specialising in bridal, party wear, and pret.",
   address: {
     "@type": "PostalAddress",
