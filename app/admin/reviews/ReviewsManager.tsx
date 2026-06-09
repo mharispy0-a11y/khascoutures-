@@ -47,10 +47,10 @@ function ReviewCard({
   }
 
   return (
-    <div className={`border rounded-lg p-4 bg-white ${review.pinned ? "border-amber-300 ring-1 ring-amber-200" : "border-gray-200"}`}>
-      <div className="flex items-start justify-between gap-3">
+    <div className={`border rounded-xl p-4 sm:p-5 bg-white ${review.pinned ? "border-amber-300 ring-1 ring-amber-200" : "border-gray-200"}`}>
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
             <span className="font-medium text-gray-800 text-sm">{review.name}</span>
             {review.role && <span className="text-xs text-gray-400">{review.role}</span>}
             {review.pinned && <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">Pinned</span>}
@@ -59,12 +59,12 @@ function ReviewCard({
           <p className="text-sm text-gray-600 mt-2 leading-relaxed">{review.content}</p>
           <p className="text-xs text-gray-400 mt-2">{format(new Date(review.created_at), "d MMM yyyy")}</p>
         </div>
-        <div className="flex flex-col gap-1.5 flex-shrink-0">
+        <div className="flex sm:flex-col gap-2 flex-shrink-0 flex-wrap pt-3 sm:pt-0 border-t sm:border-t-0 border-gray-100">
           {!review.approved ? (
             <button
               onClick={() => patch({ approved: true })}
               disabled={loading}
-              className="text-xs px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 transition-colors"
+              className="text-xs px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition-colors"
             >
               Approve
             </button>
@@ -72,7 +72,7 @@ function ReviewCard({
             <button
               onClick={() => patch({ approved: false })}
               disabled={loading}
-              className="text-xs px-3 py-1 bg-gray-100 text-gray-600 rounded hover:bg-gray-200 disabled:opacity-50 transition-colors"
+              className="text-xs px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 disabled:opacity-50 transition-colors"
             >
               Unapprove
             </button>
@@ -80,7 +80,7 @@ function ReviewCard({
           <button
             onClick={() => patch({ pinned: !review.pinned })}
             disabled={loading}
-            className={`text-xs px-3 py-1 rounded disabled:opacity-50 transition-colors ${
+            className={`text-xs px-3 py-2 rounded-lg disabled:opacity-50 transition-colors ${
               review.pinned ? "bg-amber-100 text-amber-700 hover:bg-amber-200" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >
@@ -89,7 +89,7 @@ function ReviewCard({
           <button
             onClick={del}
             disabled={loading}
-            className="text-xs px-3 py-1 bg-red-50 text-red-600 rounded hover:bg-red-100 disabled:opacity-50 transition-colors"
+            className="text-xs px-3 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 disabled:opacity-50 transition-colors"
           >
             Delete
           </button>

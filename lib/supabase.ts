@@ -73,6 +73,30 @@ export type Enquiry = {
   created_at: string;
 };
 
+export type Announcement = {
+  id: string;
+  title: string;
+  body: string;
+  category: "all" | "bridal" | "party" | "pret";
+  active: boolean;
+  pinned: boolean;
+  starts_at: string | null;
+  ends_at: string | null;
+  created_at: string;
+};
+
+export type SaleEntry = {
+  id: string;
+  sale_date: string;
+  category: "bridal" | "party" | "pret" | "other";
+  item_name: string;
+  quantity: number;
+  price_pkr: number;
+  total_revenue: number;
+  notes: string | null;
+  created_at: string;
+};
+
 let _serverClient: SupabaseClient | null = null;
 
 export function getServerClient(): SupabaseClient {

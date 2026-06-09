@@ -26,7 +26,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [pathname]);
 
   // Login page: no nav wrapper at all
-  if (pathname === "/admin/login") {
+  if (!pathname || pathname === "/admin/login" || pathname.startsWith("/admin/login")) {
     return <>{children}</>;
   }
 

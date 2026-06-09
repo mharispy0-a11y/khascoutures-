@@ -1,9 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -79,10 +76,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFAB />
+        {children}
       </body>
     </html>
   );

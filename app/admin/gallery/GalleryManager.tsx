@@ -91,11 +91,11 @@ export default function GalleryManager({ initialImages }: { initialImages: Galle
       {/* Upload zone */}
       <div className="bg-white border border-gray-200 rounded-lg p-5">
         <h2 className="text-sm font-medium text-gray-700 mb-4">Upload Images</h2>
-        <div className="flex gap-3 mb-3">
+        <div className="flex flex-col sm:flex-row gap-3 mb-3">
           <select
             value={uploadCategory}
             onChange={(e) => setUploadCategory(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-1.5 text-sm"
+            className="border border-gray-300 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
           >
             {CATEGORIES.map((c) => <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>)}
           </select>
@@ -104,7 +104,7 @@ export default function GalleryManager({ initialImages }: { initialImages: Galle
             placeholder="Caption (optional)"
             value={uploadCaption}
             onChange={(e) => setUploadCaption(e.target.value)}
-            className="flex-1 border border-gray-300 rounded px-3 py-1.5 text-sm"
+            className="flex-1 border border-gray-300 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
           />
         </div>
 
@@ -190,7 +190,7 @@ export default function GalleryManager({ initialImages }: { initialImages: Galle
                   <div className="flex gap-1">
                     <button
                       onClick={() => toggleVisible(img)}
-                      className={`flex-1 text-[10px] py-0.5 rounded transition-colors ${
+                      className={`flex-1 text-xs py-1.5 rounded-md transition-colors ${
                         img.visible
                           ? "bg-green-50 text-green-700 hover:bg-green-100"
                           : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -201,7 +201,7 @@ export default function GalleryManager({ initialImages }: { initialImages: Galle
                     <button
                       onClick={() => deleteImage(img.id)}
                       disabled={deleting === img.id}
-                      className="flex-1 text-[10px] py-0.5 rounded bg-red-50 text-red-600 hover:bg-red-100 transition-colors disabled:opacity-50"
+                      className="flex-1 text-xs py-1.5 rounded-md bg-red-50 text-red-600 hover:bg-red-100 transition-colors disabled:opacity-50"
                     >
                       {deleting === img.id ? "…" : "Delete"}
                     </button>
